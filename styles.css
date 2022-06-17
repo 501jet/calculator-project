@@ -1,0 +1,61 @@
+*, * ::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+}
+
+.calculator-grid  > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba (255, 255, 255, .75);
+
+
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+    grid-column: span 2; /* make AC and = wider*/
+}
+
+.output {
+    grid-column: 1 / -1; /* will make it fill the entire width of the top row */
+    background-color: rgba(0, 0, 0, .75);
+    display: flex; /* will align elements in our container */
+    align-items: flex- end; /* aligns it to the right side of the container - the end  */
+    justify-content: space-around; /* puts as much space around as possible */
+    flex-direction: column;/* makes the numbers on top of each other instead of side by side*/
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2rem
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2rem;
+}
